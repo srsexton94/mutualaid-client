@@ -20,6 +20,11 @@ For more information:
 - [Wikipedia - *Dual Power*](https://en.wikipedia.org/wiki/Dual_power)
 - [Kropotkin - *Mutual Aid: A Factor of Evolution*](https://www.marxists.org/reference/archive/kropotkin-peter/1902/mutual-aid/index.htm) (full text)
 
+### Project Links <!-- add as finised -->
+* [Back End Repo](https://github.com/srsexton94/mutualaid-api)
+
+## Technologies
+
 ## Dependencies
 * General Assembly [React Auth Template](https://git.generalassemb.ly/ga-wdi-boston/react-auth-template) (includes linter, scss, webpack config, npm scripts, auth routes) Features...
   - `<AuthenticatedRoute />` - takes user as a prop!
@@ -63,9 +68,6 @@ For more information:
 * Offer “forgot password?” change to un-signed in users
 * Offer google/facebook authentication
 * Display networks and/or offer posts on a map
-
-## ERD
-![](./images/erd.png?raw=true=50x50)
 
 ## Wireframes
 ![](./images/wireframe1.png?raw=true=50x50)
