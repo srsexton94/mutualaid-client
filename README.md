@@ -41,12 +41,12 @@ For more information:
 * `npm run deploy`: builds and deploys master branch
 * Bootstrap
 
-
 ## User Stories
 - As an unregistered user I want to be able to
   - view all public posts and access their content/links
   - sign up/create an account
-- As a registered user I want to be able to…
+- As a registered user I want to be able to sign in
+- As a signed-in user I want to be able to...
   - sign in, update my info, & sign out
   - view all posts
   - view a specific subdivision of posts
@@ -60,11 +60,12 @@ For more information:
 #### Moderate Stretch Goals
 * Display all posts sorted by type (tabs in wireframes)
 * Sort posts by time AND location
+* Add tags? Or search bar?
 * Add comments resource to posts
 * Update entire account information, not just password
 * Add user profile pictures/photos in posts
 
-#### Stretch "for the stars!"
+#### Stretch "for the stars!" Goals
 * Offer “forgot password?” change to un-signed in users
 * Offer google/facebook authentication
 * Display networks and/or offer posts on a map
