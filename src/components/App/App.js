@@ -10,6 +10,10 @@ import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 
 import Home from '../routes/Home'
+import Posts from '../routes/Posts'
+import Post from '../routes/Post'
+import PostCreate from '../routes/PostCreate'
+import PostEdit from '../routes/PostEdit'
 
 class App extends Component {
   constructor () {
@@ -58,6 +62,18 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
+          )} />
+          <Route exact path='/posts' render={() => (
+            <Posts msgAlert={this.msgAlert} setUser={this.setUser} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/create-post' render={() => (
+            <PostCreate msgAlert={this.msgAlert} setUser={this.setUser} />
+          )} />
+          <Route exact path='/posts/:id' render={() => (
+            <Post msgAlert={this.msgAlert} setUser={this.setUser} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/posts/:id/edit' render={() => (
+            <PostEdit msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
         </main>
       </Fragment>
