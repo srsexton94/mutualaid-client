@@ -7,7 +7,7 @@ import PostForm from '../shared/PostForm'
 import Layout from '../shared/Layout'
 
 const PostCreate = props => {
-  const [post, setPost] = useState({ title: '', text: '', label: '', zip: '' })
+  const [post, setPost] = useState({ title: '', text: '', type: '', label: '', zip: '' })
   const [createdPostId, setCreatedPostId] = useState(null)
 
   const handleChange = event => {
@@ -23,7 +23,10 @@ const PostCreate = props => {
     axios({
       url: `${apiUrl}/posts`,
       method: 'POST',
-      data: { post }
+      data: { post },
+      headers: {
+        'Authorization': `Bearer ${props.user.token}`
+      }
     })
       .then(res => setCreatedPostId(res.data.post.id))
       .catch(console.error)

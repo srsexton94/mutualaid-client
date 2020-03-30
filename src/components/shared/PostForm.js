@@ -23,7 +23,7 @@ const PostForm = ({ post, handleSubmit, handleChange, cancelPath }) => (
     <input
       type="radio"
       id="need"
-      value={post.type}
+      value="need"
       name="type"
       onChange={handleChange}
     />
@@ -31,7 +31,7 @@ const PostForm = ({ post, handleSubmit, handleChange, cancelPath }) => (
     <input
       type="radio"
       id="offer"
-      value={post.type}
+      value="offer"
       name="type"
       onChange={handleChange}
     />
@@ -39,7 +39,7 @@ const PostForm = ({ post, handleSubmit, handleChange, cancelPath }) => (
     <input
       type="radio"
       id="network"
-      value={post.type}
+      value="network"
       name="type"
       onChange={handleChange}
     />
@@ -47,7 +47,7 @@ const PostForm = ({ post, handleSubmit, handleChange, cancelPath }) => (
     <input
       type="radio"
       id="resource"
-      value={post.type}
+      value="resource"
       name="type"
       onChange={handleChange}
     />
@@ -55,7 +55,7 @@ const PostForm = ({ post, handleSubmit, handleChange, cancelPath }) => (
     <input
       type="radio"
       id="action"
-      value={post.type}
+      value="action"
       name="type"
       onChange={handleChange}
     />
@@ -63,7 +63,7 @@ const PostForm = ({ post, handleSubmit, handleChange, cancelPath }) => (
     <input
       type="radio"
       id="misc"
-      value={post.type}
+      value="misc"
       name="type"
       onChange={handleChange}
     />
