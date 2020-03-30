@@ -49,7 +49,7 @@ class App extends Component {
         ))}
         <main className="container">
           <Route exact path='/' render={() => (
-            <Home msgAlert={this.msgAlert} setUser={this.setUser} />
+            <Home msgAlert={this.msgAlert} user={user} />
           )} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
@@ -64,16 +64,16 @@ class App extends Component {
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
           <Route exact path='/posts' render={() => (
-            <Posts msgAlert={this.msgAlert} setUser={this.setUser} />
+            <Posts msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} exact path='/create-post' render={() => (
             <PostCreate msgAlert={this.msgAlert} user={user} />
           )} />
           <Route exact path='/posts/:id' render={() => (
-            <Post msgAlert={this.msgAlert} setUser={this.setUser} />
+            <Post msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} exact path='/posts/:id/edit' render={() => (
-            <PostEdit msgAlert={this.msgAlert} setUser={this.setUser} />
+            <PostEdit msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
       </Fragment>
