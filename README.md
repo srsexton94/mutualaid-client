@@ -17,6 +17,7 @@ In that vein, this project is intended to offer a means to go *beyond* mutual ai
 For more information:
 - [New York Times - *Feeling Powerless About Coronavirus? Join a Mutual-Aid Network*](https://www.nytimes.com/2020/03/23/opinion/coronavirus-aid-group.html)
 - [ROAR - *From Mutual Aid to Dual Power in the State of Emergency*](https://roarmag.org/essays/from-mutual-aid-to-dual-power-in-the-state-of-emergency/?fbclid=IwAR2V59HOXRGC-at-3NqYW2dYp8rh-5DUTbQTTmKwN9c2VGHZiF8qYVpf0XU)
+- [the Conversation - *why we feel so driven to help eachother through the coronavirus crisis*](https://theconversation.com/this-anarchist-thinker-helps-explain-why-we-feel-so-driven-to-help-each-other-through-the-coronavirus-crisis-134494?fbclid=IwAR0bnVbD47nr3PL0GjbGz6NwgG5N4tfuHQ8o-OHfkPvwqmDjRV6nTXgZEJI)
 - [Wikipedia - *Dual Power*](https://en.wikipedia.org/wiki/Dual_power)
 - [Kropotkin - *Mutual Aid: A Factor of Evolution*](https://www.marxists.org/reference/archive/kropotkin-peter/1902/mutual-aid/index.htm) (full text)
 
