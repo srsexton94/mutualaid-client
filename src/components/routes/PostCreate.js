@@ -28,7 +28,7 @@ const PostCreate = props => {
         'Authorization': `Bearer ${props.user.token}`
       }
     })
-      .then(res => setCreatedPostId(res.data.post.id))
+      .then(res => setCreatedPostId(res.data.post._id))
       .catch(console.error)
   }
 
