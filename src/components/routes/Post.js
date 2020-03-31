@@ -2,17 +2,23 @@ import React, { useState, useEffect } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 
+import messages from '../AutoDismissAlert/messages'
+
 import apiUrl from '../../apiConfig'
-import Layout from '../shared/Layout'
 
 const Post = (props) => {
   const [post, setPost] = useState(null)
   const [deleted, setDeleted] = useState(false)
-
   useEffect(() => {
     axios(`${apiUrl}/posts/${props.match.params.id}`)
       .then(res => setPost(res.data.post))
-      .catch(console.error)
+      .catch(err => {
+        props.msgAlert({
+          heading: 'Could not load Post: ' + err.message,
+          message: messages.generalFailure,
+          variant: 'danger'
+        })
+      })
   }, [])
 
   const destroy = () => {
@@ -24,7 +30,13 @@ const Post = (props) => {
       }
     })
       .then(() => setDeleted(true))
-      .catch(console.error)
+      .catch(err => {
+        props.msgAlert({
+          heading: 'Delete Not Successful: ' + err.message,
+          message: messages.generalFailure,
+          variant: 'danger'
+        })
+      })
   }
 
   if (!post) {
@@ -50,13 +62,13 @@ const Post = (props) => {
   }
 
   return (
-    <Layout>
+    <section>
       <h4>{post.title}</h4>
       <p>{post.text}</p>
       <p>Located in: {post.zip}</p>
       {authJSX}
       <Link to="/posts">Back to all posts</Link>
-    </Layout>
+    </section>
   )
 }
 

@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
+import messages from '../AutoDismissAlert/messages'
+
 import apiUrl from '../../apiConfig'
 import PostForm from '../shared/PostForm'
-import Layout from '../shared/Layout'
 
 const PostCreate = props => {
   const [post, setPost] = useState({ title: '', text: '', type: '', zip: '' })
@@ -29,7 +30,13 @@ const PostCreate = props => {
       }
     })
       .then(res => setCreatedPostId(res.data.post._id))
-      .catch(console.error)
+      .catch(err => {
+        props.msgAlert({
+          heading: 'Error, did not submit: ' + err.message,
+          message: messages.generalFailure,
+          variant: 'danger'
+        })
+      })
   }
 
   if (createdPostId) {
@@ -37,7 +44,7 @@ const PostCreate = props => {
   }
 
   return (
-    <Layout>
+    <section>
       <h2>Create a Post</h2>
       <PostForm
         post={post}
@@ -45,7 +52,7 @@ const PostCreate = props => {
         handleSubmit={handleSubmit}
         cancelPath="/"
       />
-    </Layout>
+    </section>
   )
 }
 

@@ -5,31 +5,22 @@ const PostForm = ({ post, handleSubmit, handleChange, cancelPath }) => {
   const types = ['need', 'offer', 'network', 'action', 'misc']
 
   const typeJSX = types.map(type => {
-    let inputField
+    let isChecked = false
     if (type === post.type) {
-      inputField = (
-        <input
-          type="radio"
-          id={type}
-          value={type}
-          name="type"
-          onChange={handleChange}
-          checked
-        />)
-    } else {
-      inputField = (
-        <input
-          type="radio"
-          id={type}
-          value={type}
-          name="type"
-          onChange={handleChange}
-        />)
+      isChecked = true
     }
+
     return (
       <fieldset key={type}>
         <label htmlFor={type}>{type.charAt(0).toUpperCase() + type.slice(1)}</label>
-        {inputField}
+        <input
+          type="radio"
+          id={type}
+          value={type || ''}
+          name="type"
+          onChange={handleChange}
+          checked={isChecked}
+        />
       </fieldset>
     )
   })

@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
+import messages from '../AutoDismissAlert/messages'
+
 import apiUrl from '../../apiConfig'
 import PostForm from '../shared/PostForm'
-import Layout from '../shared/Layout'
 
 const PostEdit = function (props) {
   const [post, setPost] = useState({
@@ -18,7 +19,13 @@ const PostEdit = function (props) {
   useEffect(() => {
     axios(`${apiUrl}/posts/${props.match.params.id}`)
       .then(res => setPost(res.data.post))
-      .catch(console.error)
+      .catch(err => {
+        props.msgAlert({
+          heading: 'Could not load Post: ' + err.message,
+          message: messages.generalFailure,
+          variant: 'danger'
+        })
+      })
   }, [])
 
   const handleChange = event => {
@@ -41,7 +48,13 @@ const PostEdit = function (props) {
       }
     })
       .then(() => setUpdated(true))
-      .catch(console.error)
+      .catch(err => {
+        props.msgAlert({
+          heading: 'Error, did not submit: ' + err.message,
+          message: messages.generalFailure,
+          variant: 'danger'
+        })
+      })
   }
 
   if (updated) {
@@ -49,14 +62,14 @@ const PostEdit = function (props) {
   }
 
   return (
-    <Layout>
+    <section>
       <PostForm
         post={post}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         cancelPath={`/posts/${props.match.params.id}`}
       />
-    </Layout>
+    </section>
   )
 }
 
