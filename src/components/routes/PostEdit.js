@@ -35,7 +35,7 @@ const PostEdit = function (props) {
     axios({
       url: `${apiUrl}/posts/${props.match.params.id}`,
       method: 'PATCH',
-      data: post,
+      data: { post: post },
       headers: {
         'Authorization': `Bearer ${props.user.token}`
       }
