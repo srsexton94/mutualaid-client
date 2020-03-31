@@ -7,7 +7,7 @@ import PostForm from '../shared/PostForm'
 import Layout from '../shared/Layout'
 
 const PostCreate = props => {
-  const [post, setPost] = useState({ title: '', text: '', type: '', label: '', zip: '' })
+  const [post, setPost] = useState({ title: '', text: '', type: '', zip: '' })
   const [createdPostId, setCreatedPostId] = useState(null)
 
   const handleChange = event => {

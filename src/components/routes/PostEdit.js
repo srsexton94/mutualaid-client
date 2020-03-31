@@ -10,7 +10,7 @@ const PostEdit = function (props) {
   const [post, setPost] = useState({
     title: '',
     text: '',
-    label: '',
+    type: '',
     zip: ''
   })
   const [updated, setUpdated] = useState(false)
