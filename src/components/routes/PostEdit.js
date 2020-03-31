@@ -31,7 +31,7 @@ const PostEdit = function (props) {
 
   const handleSubmit = event => {
     event.preventDefault()
-    console.log('post: ', post)
+
     axios({
       url: `${apiUrl}/posts/${props.match.params.id}`,
       method: 'PATCH',

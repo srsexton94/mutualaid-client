@@ -14,7 +14,6 @@ const Posts = function () {
       .catch(console.error)
   }, [])
 
-  console.log('posts: ', posts)
   const postsJSX = posts.map(post => (
     <li key={post._id}>
       <Link to={`/posts/${post._id}`}>{post.title}</Link>

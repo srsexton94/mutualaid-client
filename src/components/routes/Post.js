@@ -18,7 +18,10 @@ const Post = (props) => {
   const destroy = () => {
     axios({
       url: `${apiUrl}/posts/${props.match.params.id}`,
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${props.user.token}`
+      }
     })
       .then(() => setDeleted(true))
       .catch(console.error)
@@ -35,17 +38,15 @@ const Post = (props) => {
   }
 
   let authJSX
-  if (props.user) {
-    if (props.user._id === post.owner) {
-      authJSX = (
-        <div>
-          <button onClick={destroy}>Delete Post</button>
-          <Link to={`/posts/${props.match.params.id}/edit`}>
-            <button>Edit</button>
-          </Link>
-        </div>
-      )
-    }
+  if (props.user && (props.user._id === post.owner)) {
+    authJSX = (
+      <div>
+        <button onClick={destroy}>Delete Post</button>
+        <Link to={`/posts/${props.match.params.id}/edit`}>
+          <button>Edit</button>
+        </Link>
+      </div>
+    )
   }
 
   return (
