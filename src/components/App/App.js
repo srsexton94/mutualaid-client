@@ -63,17 +63,17 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
-          <Route exact path='/posts' render={() => (
+          <Route exact user={user} path='/posts' render={() => (
             <Posts msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} exact path='/create-post' render={() => (
             <PostCreate msgAlert={this.msgAlert} user={user} />
           )} />
-          <Route exact path='/posts/:id' render={() => (
-            <Post msgAlert={this.msgAlert} user={user} />
+          <Route exact user={user} path='/posts/:id' render={({ match }) => (
+            <Post match={match} msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} exact path='/posts/:id/edit' render={() => (
-            <PostEdit msgAlert={this.msgAlert} user={user} />
+          <AuthenticatedRoute user={user} exact path='/posts/:id/edit' render={({ match }) => (
+            <PostEdit match={match} msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
       </Fragment>
