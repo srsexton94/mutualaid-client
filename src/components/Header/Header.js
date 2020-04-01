@@ -24,8 +24,8 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
-    <Navbar.Brand href="#">
+  <Navbar className="header-main" bg="primary" variant="dark" expand="md">
+    <Navbar.Brand className="header-text" href="#">
       Mutual Aid, Dual Power
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />

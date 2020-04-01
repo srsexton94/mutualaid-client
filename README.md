@@ -35,6 +35,7 @@ For more information:
     - use with `messages.js`
   - `src/apiConfig.js` - determines production/development & chooses API URL, replace `production` with deployed API's URL
 * `npm install`: installs dependencies in package.json
+* `npm install styled-components`: installs styled components for React styling
 * `npm run nag`: runs code quality analysis tools on your code and complains.
 * `npm run make-standard`: reformats all your code in the JavaScript Standard Style.
 * `npm run start`: generates bundles, watches, and livereloads.

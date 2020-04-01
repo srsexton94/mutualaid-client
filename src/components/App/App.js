@@ -15,12 +15,6 @@ import Post from '../routes/Post'
 import PostCreate from '../routes/PostCreate'
 import PostEdit from '../routes/PostEdit'
 
-// import Needs from '../routes/sortedPosts/Needs.js'
-// import Offers from '../routes/sortedPosts/Offers.js'
-// import Networks from '../routes/sortedPosts/Networks.js'
-// import Actions from '../routes/sortedPosts/Actions.js'
-// import Misc from '../routes/sortedPosts/Misc.js'
-
 class App extends Component {
   constructor () {
     super()
