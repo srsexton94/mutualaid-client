@@ -22,15 +22,28 @@ const Posts = function (props) {
       })
   }, [])
 
-  const postsJSX = posts.map(post => (
-    <li key={post._id}>
-      <p><Link to={`/posts/${post._id}`}>{post.title}</Link> ({post.zip})</p>
-    </li>
-  ))
+  let postsJSX
+  if (props.type === 'all') {
+    postsJSX = posts.map(post => (
+      <li key={post._id}>
+        <p><Link to={`/posts/${post._id}`}>{post.title}</Link> ({post.zip})</p>
+      </li>
+    ))
+  } else if (props.type) {
+    postsJSX = posts.map(post => {
+      if (post.type === props.type) {
+        return (
+          <li key={post._id}>
+            <p><Link to={`/posts/${post._id}`}>{post.title}</Link> ({post.zip})</p>
+          </li>
+        )
+      }
+    })
+  }
 
   return (
     <Layout>
-      <h4>Posts</h4>
+      <h4>{props.type.charAt(0).toUpperCase() + props.type.slice(1)} Posts</h4>
       <ul>
         {postsJSX}
       </ul>
