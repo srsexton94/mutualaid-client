@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-import messages from '../AutoDismissAlert/messages'
+import messages from '../../AutoDismissAlert/messages'
 
-import apiUrl from '../../apiConfig'
-import Layout from '../shared/Layout'
+import apiUrl from '../../../apiConfig'
+import Layout from '../../shared/Layout'
 
-const Posts = function (props) {
+const Misc = function (props) {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
@@ -22,20 +22,24 @@ const Posts = function (props) {
       })
   }, [])
 
-  const postsJSX = posts.map(post => (
-    <li key={post._id}>
-      <p><Link to={`/posts/${post._id}`}>{post.title}</Link> ({post.zip})</p>
-    </li>
-  ))
+  const miscJSX = posts.map(post => {
+    if (post.type === 'misc') {
+      return (
+        <li key={post._id}>
+          <p><Link to={`/posts/${post._id}`}>{post.title}</Link> ({post.zip})</p>
+        </li>
+      )
+    }
+  })
 
   return (
     <Layout>
-      <h4>Posts</h4>
+      <h4>General/Misc. Posts</h4>
       <ul>
-        {postsJSX}
+        {miscJSX}
       </ul>
     </Layout>
   )
 }
 
-export default Posts
+export default Misc

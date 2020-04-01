@@ -15,6 +15,12 @@ import Post from '../routes/Post'
 import PostCreate from '../routes/PostCreate'
 import PostEdit from '../routes/PostEdit'
 
+import Needs from '../routes/sortedPosts/Needs.js'
+import Offers from '../routes/sortedPosts/Offers.js'
+import Networks from '../routes/sortedPosts/Networks.js'
+import Actions from '../routes/sortedPosts/Actions.js'
+import Misc from '../routes/sortedPosts/Misc.js'
+
 class App extends Component {
   constructor () {
     super()
@@ -65,6 +71,21 @@ class App extends Component {
           )} />
           <Route exact user={user} path='/posts' render={() => (
             <Posts msgAlert={this.msgAlert} user={user} />
+          )} />
+          <Route exact user={user} path='/needs' render={() => (
+            <Needs msgAlert={this.msgAlert} user={user} />
+          )} />
+          <Route exact user={user} path='/offers' render={() => (
+            <Offers msgAlert={this.msgAlert} user={user} />
+          )} />
+          <Route exact user={user} path='/networks' render={() => (
+            <Networks msgAlert={this.msgAlert} user={user} />
+          )} />
+          <Route exact user={user} path='/actions' render={() => (
+            <Actions msgAlert={this.msgAlert} user={user} />
+          )} />
+          <Route exact user={user} path='/misc' render={() => (
+            <Misc msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} exact path='/create-post' render={() => (
             <PostCreate msgAlert={this.msgAlert} user={user} />

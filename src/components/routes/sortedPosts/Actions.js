@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-import messages from '../AutoDismissAlert/messages'
+import messages from '../../AutoDismissAlert/messages'
 
-import apiUrl from '../../apiConfig'
-import Layout from '../shared/Layout'
+import apiUrl from '../../../apiConfig'
+import Layout from '../../shared/Layout'
 
-const Posts = function (props) {
+const Actions = function (props) {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
@@ -22,20 +22,24 @@ const Posts = function (props) {
       })
   }, [])
 
-  const postsJSX = posts.map(post => (
-    <li key={post._id}>
-      <p><Link to={`/posts/${post._id}`}>{post.title}</Link> ({post.zip})</p>
-    </li>
-  ))
+  const actionsJSX = posts.map(post => {
+    if (post.type === 'action') {
+      return (
+        <li key={post._id}>
+          <p><Link to={`/posts/${post._id}`}>{post.title}</Link> ({post.zip})</p>
+        </li>
+      )
+    }
+  })
 
   return (
     <Layout>
-      <h4>Posts</h4>
+      <h4>Actions</h4>
       <ul>
-        {postsJSX}
+        {actionsJSX}
       </ul>
     </Layout>
   )
 }
 
-export default Posts
+export default Actions
