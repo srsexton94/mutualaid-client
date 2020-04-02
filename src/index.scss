@@ -25,6 +25,7 @@ body {
 .footer {
   background-color: $banner;
   bottom: 0;
+  box-shadow: 0 -3px 5px $shadow;
   font-size: .75em;
   left: 0;
   position: fixed;
@@ -35,7 +36,12 @@ body {
 .header-main {
   background-color: $banner !important;
   box-shadow: 0 3px 5px $shadow;
-  height: 20vh;
+  min-height: 20vh;
+}
+
+.header-link {
+  color: $form !important;
+  text-shadow:  0 3px 5px $shadow;
 }
 
 .header-text {
@@ -62,6 +68,7 @@ body {
   border-bottom-left-radius: 1em;
   border-bottom-right-radius: 1em;
   border-top-right-radius: 1em;
+  box-shadow: 0 3px 5px $shadow;
   min-height: 60vh;
 
   h4 {
