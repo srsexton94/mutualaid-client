@@ -10,7 +10,7 @@ This app is intended to stand as a both a network in and of itself, as well as a
 ### Mutual Aid & Dual Power
 'Mutual Aid' as an organizing theory largely emerged from the writings and activism of [Pyotr Kropotkin](https://en.wikipedia.org/wiki/Peter_Kropotkin), referring to reciprocal community support intended as non-hierarchical, voluntary, and free exchanges between members of a society or group.
 
-'Dual Power' on the other hand, largely attributted to Bolsheviks and [Lennin](https://en.wikipedia.org/wiki/Vladimir_Lenin) but having its origins in the writings of [Pierre-Joseph Proudhon](https://en.wikipedia.org/wiki/Pierre-Joseph_Proudhon), refers to the coexisitence and competition between powers (contextually, proletariat/democratic vs. capitalist/autocratic) in transition away from injustice.
+'Dual Power' on the other hand, largely attributted to Bolsheviks and [Lenin](https://en.wikipedia.org/wiki/Vladimir_Lenin) but having its origins in the writings of [Pierre-Joseph Proudhon](https://en.wikipedia.org/wiki/Pierre-Joseph_Proudhon), refers to the coexisitence and competition between powers (contextually, proletariat/democratic vs. capitalist/autocratic) in transition away from injustice.
 
 In that vein, this project is intended to offer a means to go *beyond* mutual aid, and help people mobilize and organize towards collective action.
 

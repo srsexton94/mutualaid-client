@@ -43,10 +43,12 @@ const Posts = function (props) {
 
   return (
     <Layout>
-      <h4>{props.type.charAt(0).toUpperCase() + props.type.slice(1)} Posts</h4>
-      <ul>
-        {postsJSX}
-      </ul>
+      <div className="posts">
+        <h4>{props.type.charAt(0).toUpperCase() + props.type.slice(1)} Posts</h4>
+        <ul>
+          {postsJSX}
+        </ul>
+      </div>
     </Layout>
   )
 }

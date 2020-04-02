@@ -1,29 +1,87 @@
 @import '~bootstrap/scss/bootstrap';
 
-$background: rgba(63, 96, 128, .75);
-$banner: #3F6080;
-$text: #1F2F40;
+$background: #d1d5de;
+$banner: #b7b6c2;
+$form: #fff;
+$text: #1c0f13;
 $links: #111;
-$header: rgba(255, 255, 255, 0.5);
+$header: rgba(255, 255, 255, .5);
+$shadow: rgba(60, 65, 75, .5);
 
 body {
   background-color: $background;
 
   p,
-  a,
-  h4 {
+  a {
     color: $text;
   }
+
+  h4 {
+    color: $text;
+    font-family: Impact, Charcoal, sans-serif;
+  }
+}
+
+.footer {
+  background-color: $banner;
+  bottom: 0;
+  font-size: .75em;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  width: 100%;
 }
 
 .header-main {
   background-color: $banner !important;
-  box-shadow: 0 3px 5px rgba(60, 65, 75, .5);
-  height: 15vh;
+  box-shadow: 0 3px 5px $shadow;
+  height: 20vh;
 }
 
 .header-text {
   color: $text !important;
   font-family: Impact, Charcoal, sans-serif;
-  font-size: 7vw;
+  font-size: 5vw;
+}
+
+.home {
+  padding-top: 10vh;
+
+  button {
+    margin: 0 auto 15px;
+  }
+}
+
+.layout {
+  padding: 5vh;
+
+}
+
+.posts {
+  background-color: $form;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  border-top-right-radius: 1em;
+  min-height: 60vh;
+
+  h4 {
+    padding: 2vh;
+  }
+
+  ul {
+    columns: 3;
+    list-style: square outside none;
+    padding: 0 auto;
+    margin: 0;
+  }
+}
+
+.posts-nav {
+  a {
+    background-color: $form;
+    border-top-left-radius: .5em;
+    border-top-right-radius: .5em;
+    margin-right: 1px;
+    padding: 5px;
+  }
 }
