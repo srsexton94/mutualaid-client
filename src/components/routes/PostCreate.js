@@ -44,7 +44,7 @@ const PostCreate = props => {
   }
 
   return (
-    <section>
+    <section className="post-create">
       <h2>Create a Post</h2>
       <PostForm
         post={post}

@@ -27,45 +27,58 @@ const PostForm = ({ post, handleSubmit, handleChange, cancelPath }) => {
 
   return (
     <form className="post-form" onSubmit={handleSubmit}>
-      <label>Title</label>
-      <input
-        type="text"
-        placeholder="A descriptive title"
-        value={post.title}
-        name="title"
-        onChange={handleChange}
-      />
+      <fieldset>
+        <label>Title: </label>
+        <input
+          type="text"
+          placeholder="A descriptive title"
+          value={post.title}
+          name="title"
+          onChange={handleChange}
+        />
+      </fieldset>
 
-      <label>Body Text</label>
-      <textarea
-        value={post.text}
-        name="text"
-        onChange={handleChange}
-      />
+      <fieldset>
+        <label>Body Text: </label>
+        <textarea
+          value={post.text}
+          name="text"
+          onChange={handleChange}
+          rows="5"
+          cols="50"
+        />
+      </fieldset>
 
-      <input
-        type="text"
-        placeholder="provide a URL"
-        value={post.sourceUrl}
-        name="sourceUrl"
-        onChange={handleChange}
-      />
+      <fieldset>
+        <label>Resource Link: </label>
+        <input
+          type="text"
+          placeholder="provide a URL"
+          value={post.sourceUrl}
+          name="sourceUrl"
+          onChange={handleChange}
+        />
+      </fieldset>
 
-      {typeJSX}
+      <fieldset className="radios">
+        {typeJSX}
+      </fieldset>
 
-      <label>Location (Zip Code)</label>
-      <input
-        type="text"
-        placeholder="enter zip code"
-        value={post.zip}
-        name="zip"
-        pattern="[0-9]*"
-        onChange={handleChange}
-      />
+      <fieldset>
+        <label>Location (Zip Code)</label>
+        <input
+          type="text"
+          placeholder="enter zip code"
+          value={post.zip}
+          name="zip"
+          pattern="[0-9]*"
+          onChange={handleChange}
+        />
+      </fieldset>
 
-      <button type="submit">Submit</button>
+      <button style={{ margin: '0 2px 10px' }} className="btn btn-secondary" type="submit">Submit</button>
       <Link to={cancelPath}>
-        <button>Cancel</button>
+        <button style={{ margin: '0 2px 10px' }} className="btn btn-secondary" >Cancel</button>
       </Link>
     </form>
   )

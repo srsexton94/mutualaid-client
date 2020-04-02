@@ -62,7 +62,8 @@ const PostEdit = function (props) {
   }
 
   return (
-    <section>
+    <section className="post-edit">
+      <h2>Edit &apos;{post.title}&apos;</h2>
       <PostForm
         post={post}
         handleChange={handleChange}

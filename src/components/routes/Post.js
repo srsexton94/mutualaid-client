@@ -52,23 +52,25 @@ const Post = (props) => {
   let authJSX
   if (props.user && (props.user._id === post.owner)) {
     authJSX = (
-      <div>
-        <button onClick={destroy}>Delete Post</button>
+      <div className="show-buttons">
+        <button className="btn btn-outline-danger btn-sm" onClick={destroy}>Delete Post</button>
         <Link to={`/posts/${props.match.params.id}/edit`}>
-          <button>Edit</button>
+          <button className="btn btn-outline-secondary btn-sm">Edit Post</button>
         </Link>
       </div>
     )
   }
 
   return (
-    <section>
+    <section className="show-view">
       <h4>{post.title}</h4>
       <p>{post.text}</p>
       <p>Located in: {post.zip}</p>
-      { post.sourceUrl ? <a href={post.sourceUrl}>For more information, visit here</a> : ''}
-      {authJSX}
-      <Link to="/posts">Back to all posts</Link>
+      <div className="show-buttons">
+        { post.sourceUrl ? <a href={post.sourceUrl}><button className="btn btn-info btn-sm">More Info</button></a> : ''}
+        {authJSX}
+        <Link to="/posts"><button className="btn btn-outline-dark btn-sm">Back to All Posts</button></Link>
+      </div>
     </section>
   )
 }

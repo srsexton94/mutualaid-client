@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 const Home = () => (
   <section className="home">
     <NavLink to='/posts'>
-      <button className="btn btn-info btn-block">View Posts</button>
+      <button className="btn btn-info btn-block">View our Mutual Aid Resources!</button>
     </NavLink>
     <h4>What are we doing here?</h4>
     <p><em>Mutual Aid, Dual Power</em> is a community-generated project to help
