@@ -66,6 +66,7 @@ const Post = (props) => {
       <h4>{post.title}</h4>
       <p>{post.text}</p>
       <p>Located in: {post.zip}</p>
+      { post.sourceUrl ? <a href={post.sourceUrl}>For more information, visit here</a> : ''}
       {authJSX}
       <Link to="/posts">Back to all posts</Link>
     </section>

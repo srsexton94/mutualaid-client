@@ -26,7 +26,7 @@ const PostForm = ({ post, handleSubmit, handleChange, cancelPath }) => {
   })
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="post-form" onSubmit={handleSubmit}>
       <label>Title</label>
       <input
         type="text"
@@ -40,6 +40,14 @@ const PostForm = ({ post, handleSubmit, handleChange, cancelPath }) => {
       <textarea
         value={post.text}
         name="text"
+        onChange={handleChange}
+      />
+
+      <input
+        type="text"
+        placeholder="provide a URL"
+        value={post.sourceUrl}
+        name="sourceUrl"
         onChange={handleChange}
       />
 
