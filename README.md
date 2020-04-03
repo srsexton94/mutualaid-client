@@ -30,6 +30,7 @@ For more information:
 * [Back End Repo](https://github.com/srsexton94/mutualaid-api)
 * [Deployed Backend](https://fast-oasis-63373.herokuapp.com/)
 * [Project Board](https://github.com/users/srsexton94/projects/1)
+* [Resources Spreadsheet](https://docs.google.com/spreadsheets/d/1lGIyPI_Jiy_0qOH_ncmSXQXtWyU1YpWvLBr6guJRPb4/edit#gid=0)
 
 ## Technologies
 On the client side, the technologies used included...
@@ -86,6 +87,8 @@ It also serves the added benefit of increasing accesibility and easing the onboa
 At current publication the MVP scenario outlined below is considered successful; as is the first of the Moderate Stretch Goals (displaying posts sorted by type).
 
 The other stretch goals have not yet been attempted and contribution is welcomed. It is vaguely intended to proceed more or less in the order presented below, but the order is flexible should reason present itself.
+
+Additionally, a data collection and cleaning process is underway.  Once the data is adequately formatted, it should be uploaded to the database.
 
 #### MVP
 * Provide sign up/in/out and change password
