@@ -57,7 +57,7 @@ On the client side, the technologies used included...
 * `npm run deploy`: builds and deploys master branch
 
 ## Planning Process
-The planning process for this project began by outlining User Stories wire frames.  Additionally, though working independently, a [project board](https://github.com/users/srsexton94/projects/1) was made as a task list to track progress.
+The planning process for this project began by outlining User Stories abd Wire Frames.  Additionally, though working independently, a [project board](https://github.com/users/srsexton94/projects/1) was made as a task list to track progress.
 
 ## User Stories
 - As an unregistered user I want to be able to
@@ -90,6 +90,7 @@ The other stretch goals have not yet been attempted and contribution is welcomed
 #### MVP
 * Provide sign up/in/out and change password
 * Display all posts, view a single post, update/delete your own post
+* No bugs, alerts, refreshing, or console logs
 
 #### Moderate Stretch Goals
 * Display all posts sorted by type (tabs in wireframes)
