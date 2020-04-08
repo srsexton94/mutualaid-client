@@ -67,7 +67,7 @@ const Post = (props) => {
       <p>{post.text}</p>
       <p>Located in: {post.zip}</p>
       <div className="show-buttons">
-        { post.sourceUrl ? <a href={post.sourceUrl}><button className="btn btn-info btn-sm">More Info</button></a> : ''}
+        { post.sourceUrl ? <a rel="noreferrer noopener" target="_blank" href={post.sourceUrl}><button className="btn btn-info btn-sm">More Info</button></a> : ''}
         {authJSX}
         <Link to="/posts"><button className="btn btn-outline-dark btn-sm">Back to All Posts</button></Link>
       </div>

@@ -21,7 +21,7 @@ const Home = () => (
     in essence, we all survive and thrive not because we&apos;re competing to be
     the best, but because we help eachother along the way.</p>
     <h4>And... Dual Power?</h4>
-    <p>&apos;Dual Power&apos; on the other hand refers to <em>coexisitence</em> and <em>competition</em> between
+    <p>&apos;Dual Power&apos; on the other hand refers to <em>coexistence</em> and <em>competition</em> between
     two &quot;powers&quot; in our world, as we move together towards a more just
     world. It also recognizes the need for collective action.  To care for one
     another we must also speak against, and protect eachother from, the powers
