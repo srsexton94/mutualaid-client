@@ -9,6 +9,14 @@ This app is intended to stand as a both a network in and of itself, as well as a
 
 This repo is the client side application. The project, *Mutual Aid, Dual Power*, works with a 'User' and 'Post' resource, from its custom API, to allow users to register for an authenticated account and then make, edit, and delete their own posts.  Additionally all users, whether registered or not, are able to view all the posts in the database (additionally sorted by the provided 'type').
 
+### Project Links
+* [Live Site](https://srsexton94.github.io/mutualaid-client/)
+* [Back End Repo](https://github.com/srsexton94/mutualaid-api)
+* [Deployed Backend](https://fast-oasis-63373.herokuapp.com/)
+* [Project Board](https://github.com/users/srsexton94/projects/1)
+* [Resources Spreadsheet](https://docs.google.com/spreadsheets/d/1lGIyPI_Jiy_0qOH_ncmSXQXtWyU1YpWvLBr6guJRPb4/edit#gid=0)
+
+
 ### Mutual Aid & Dual Power
 'Mutual Aid' as an organizing theory largely emerged from the writings and activism of [Pyotr Kropotkin](https://en.wikipedia.org/wiki/Peter_Kropotkin), referring to reciprocal community support intended as non-hierarchical, voluntary, and free exchanges between members of a society or group.
 
@@ -24,13 +32,6 @@ For more information:
 - [Kropotkin - *Mutual Aid: A Factor of Evolution*](https://www.marxists.org/reference/archive/kropotkin-peter/1902/mutual-aid/index.htm) (full text)
 
 ![](./images/aoc-mariame.png?raw=true=50x50)
-
-### Project Links
-* [Live Site](https://srsexton94.github.io/mutualaid-client/)
-* [Back End Repo](https://github.com/srsexton94/mutualaid-api)
-* [Deployed Backend](https://fast-oasis-63373.herokuapp.com/)
-* [Project Board](https://github.com/users/srsexton94/projects/1)
-* [Resources Spreadsheet](https://docs.google.com/spreadsheets/d/1lGIyPI_Jiy_0qOH_ncmSXQXtWyU1YpWvLBr6guJRPb4/edit#gid=0)
 
 ## Technologies
 On the client side, the technologies used included...
@@ -86,7 +87,7 @@ It also serves the added benefit of increasing accesibility and easing the onboa
 ## Unsolved Problems
 At current publication the MVP scenario outlined below is considered successful; as is the first of the Moderate Stretch Goals (displaying posts sorted by type).
 
-The other stretch goals have not yet been attempted and contribution is welcomed. It is vaguely intended to proceed more or less in the order presented below, but the order is flexible should reason present itself.
+The other stretch goals have not yet been attempted and contribution is welcomed. It is vaguely intended to proceed in the order presented below, but the order is more or less flexible.
 
 Additionally, a data collection and cleaning process is underway.  Once the data is adequately formatted, it should be uploaded to the database.
 
