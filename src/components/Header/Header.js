@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 
+// These options display only when a user is signed in
 const authenticatedOptions = (
   <Fragment>
     <Nav.Link className="header-link" href="#create-post">Create a Post</Nav.Link>
@@ -10,6 +11,7 @@ const authenticatedOptions = (
   </Fragment>
 )
 
+// These options display only when not signed in
 const unauthenticatedOptions = (
   <Fragment>
     <Nav.Link className="header-link" href="#sign-up">Sign Up</Nav.Link>
@@ -17,6 +19,7 @@ const unauthenticatedOptions = (
   </Fragment>
 )
 
+// These options display when both signed in and not
 const alwaysOptions = (
   <Fragment>
     <Nav.Link className="header-link" href="#/">Home</Nav.Link>
@@ -24,6 +27,7 @@ const alwaysOptions = (
   </Fragment>
 )
 
+// returns JSX for `Header`, choosing menu items based on passed `user` parameter
 const Header = ({ user }) => (
   <Navbar className="header-main" bg="primary" variant="dark" expand="md">
     <Navbar.Brand className="header-text" href="#">
@@ -39,4 +43,5 @@ const Header = ({ user }) => (
   </Navbar>
 )
 
+// Export component for use in `App`
 export default Header

@@ -1,15 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+// creates a component for the create/edit form
 const PostForm = ({ post, handleSubmit, handleChange, cancelPath }) => {
+  // declares an array of the different post 'types' (to match sort routes)
   const types = ['need', 'offer', 'network', 'action', 'misc']
 
+  // declares a JSX variable for the radio buttons to be used in the form
+  // maps through the different post types
   const typeJSX = types.map(type => {
+    // initialized 'checked' value to false (presumes button was not checked)
     let isChecked = false
+    // if editing a post, set `isChecked` value to true when it matches the post
     if (type === post.type) {
       isChecked = true
     }
 
+    // returns JSX for radio button fieldset, adds to mapped array
+    // `label` takes the type string and capitalizes the first letter
+    // input takes a conditional to avoid oscillating b/w `controlled` and
+    // `uncontrolled` input types (receives React warning)
     return (
       <fieldset key={type}>
         <label htmlFor={type}>{type.charAt(0).toUpperCase() + type.slice(1)}</label>
@@ -25,6 +35,8 @@ const PostForm = ({ post, handleSubmit, handleChange, cancelPath }) => {
     )
   })
 
+  // returns JSX for the `PostForm` component, includes an input for each
+  // attribute of `post` resource
   return (
     <form className="post-form" onSubmit={handleSubmit}>
       <fieldset>
@@ -84,4 +96,5 @@ const PostForm = ({ post, handleSubmit, handleChange, cancelPath }) => {
   )
 }
 
+// exports component for use in `PostCreate` and `PostEdit`
 export default PostForm

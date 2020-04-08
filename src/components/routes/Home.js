@@ -1,6 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
+// `Home` component returns JSX to be displayed at `/` route
+// includes descriptive content for the project and multiple navigation routes
+// to `/posts` route to aid accessibility
 const Home = () => (
   <section className="home">
     <NavLink to='/posts'>
@@ -40,4 +43,5 @@ const Home = () => (
   </section>
 )
 
+// exports component for use in `App`
 export default Home

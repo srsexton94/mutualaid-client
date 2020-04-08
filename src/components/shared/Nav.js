@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-// TODO: insert links to sorted lists of posts later
+// creates component for posts nav bar (ie the tabs)
 const Nav = () => (
   <nav className="posts-nav">
     <NavLink to='/posts'>All</NavLink>
@@ -13,4 +13,5 @@ const Nav = () => (
   </nav>
 )
 
+// exports component for use in `Layout`
 export default Nav
