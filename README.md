@@ -72,6 +72,8 @@ The planning process for this project began by outlining User Stories abd Wire F
   - view a specific subdivision of posts
   - view a specific post
   - create, update, and delete my own posts
+- As a potential contributor to mutualaid-client
+  - I would like to have a document that details the agreed workflow so that I can get an idea of how to get started contributing
 
 ## Wireframes
 ![](./images/wireframe1.png?raw=true=50x50)
