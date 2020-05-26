@@ -34,13 +34,13 @@ const Posts = function (props) {
   // if sort type is `all`, map over posts array and return <li> for each
   // otherwise, map over posts array and return <li> for each w/matching `type`
   if (props.type === 'all') {
-    postsJSX = posts.map(post => (
+    postsJSX = posts.reverse().map(post => (
       <li key={post._id}>
         <p><Link to={`/posts/${post._id}`}>{post.title}</Link> ({post.zip})</p>
       </li>
     ))
   } else if (props.type) {
-    postsJSX = posts.map(post => {
+    postsJSX = posts.reverse().map(post => {
       if (post.type === props.type) {
         return (
           <li key={post._id}>
