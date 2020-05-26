@@ -29,6 +29,18 @@ const Posts = function (props) {
       })
   }, [])
 
+  const zipFinder = zip => {
+    const regex = /[a-zA-Z]/
+    if (zip === '0') {
+      return 'Remote/All Locations'
+    } else if (regex.test(zip)) {
+      return zip + ' - United Kingdom'
+    } else {
+      if (zip.length === 4) zip = `0${zip}`
+      return zip + ' - United States'
+    }
+  }
+
   // writes JSX to display only posts matching the sort (ie post tabs)
   // does so by passing prop `type` in routes (in `App`)
   let postsJSX
@@ -41,7 +53,7 @@ const Posts = function (props) {
           <Card className="post-card">
             <Card.Body>
               <Card.Title>{post.title}</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">({post.zip})</Card.Subtitle>
+              <Card.Subtitle className="mb-2 text-muted">{zipFinder(post.zip)}</Card.Subtitle>
             </Card.Body>
           </Card>
         </Link>
@@ -56,7 +68,7 @@ const Posts = function (props) {
               <Card className="post-card">
                 <Card.Body>
                   <Card.Title>{post.title}</Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">({post.zip})</Card.Subtitle>
+                  <Card.Subtitle className="mb-2 text-muted">{zipFinder(post.zip)}</Card.Subtitle>
                 </Card.Body>
               </Card>
             </Link>
