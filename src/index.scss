@@ -3,10 +3,14 @@
 $background: #d1d5de;
 $banner: #b7b6c2;
 $form: #fff;
-$text: #1c0f13;
-$links: #111;
 $header: rgba(255, 255, 255, .5);
+$links: #111;
+$misc: #3e517a;
+$need: #46b1c9;
+$network: #e08e45;
+$offer: #b3d89c;
 $shadow: rgba(60, 65, 75, .5);
+$text: #1c0f13;
 
 body {
   background-color: $background;
@@ -105,6 +109,40 @@ body {
       margin-bottom: 1rem;
       min-width: 250px;
       padding: 0;
+    }
+
+    .bookmark {
+      border-bottom: 10px solid transparent;
+      border-left: 15px solid $misc;
+      border-radius: 2px;
+      border-right: 15px solid $misc;
+      color: $form;
+      font-weight: bold;
+      height: 2.75rem;
+      margin-left: 1rem;
+      padding: 0;
+      padding-top: .5rem;
+      width: 1rem;
+    }
+
+    .bm-need {
+      border-left: 15px solid $need;
+      border-right: 15px solid $need;
+    }
+
+    .bm-offer {
+      border-left: 15px solid $offer;
+      border-right: 15px solid $offer;
+    }
+
+    .bm-network {
+      border-left: 15px solid $network;
+      border-right: 15px solid $network;
+    }
+
+    .bm-action {
+      border-left: 15px solid #982649;
+      border-right: 15px solid #982649;
     }
   }
 }

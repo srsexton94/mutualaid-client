@@ -46,6 +46,7 @@ const Post = (props) => {
       })
   }
 
+  // A function to return appropriate text explanation re: zip/postal codes
   const zipFinder = zip => {
     const regex = /[a-zA-Z]/
     if (zip === '0') {

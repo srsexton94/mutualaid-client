@@ -29,6 +29,7 @@ const Posts = function (props) {
       })
   }, [])
 
+  // A function to return appropriate text explanation re: zip/postal codes
   const zipFinder = zip => {
     const regex = /[a-zA-Z]/
     if (zip === '0') {
@@ -49,14 +50,17 @@ const Posts = function (props) {
   if (props.type === 'all') {
     postsJSX = posts.reverse().map(post => (
       <li key={post._id}>
-        <Link to={`/posts/${post._id}`}>
-          <Card className="post-card">
+        <Card className="post-card">
+          <Link to={`/${post.type}s`}>
+            <div className={'bookmark bm-' + post.type}>{post.type.charAt(0).toUpperCase()}</div>
+          </Link>
+          <Link to={`/posts/${post._id}`}>
             <Card.Body>
               <Card.Title>{post.title}</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">{zipFinder(post.zip)}</Card.Subtitle>
             </Card.Body>
-          </Card>
-        </Link>
+          </Link>
+        </Card>
       </li>
     ))
   } else if (props.type) {
@@ -64,14 +68,14 @@ const Posts = function (props) {
       if (post.type === props.type) {
         return (
           <li key={post._id}>
-            <Link to={`/posts/${post._id}`}>
-              <Card className="post-card">
+            <Card className="post-card">
+              <Link to={`/posts/${post._id}`}>
                 <Card.Body>
                   <Card.Title>{post.title}</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">{zipFinder(post.zip)}</Card.Subtitle>
                 </Card.Body>
-              </Card>
-            </Link>
+              </Link>
+            </Card>
           </li>
         )
       }
