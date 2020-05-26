@@ -26,6 +26,25 @@ body {
   }
 }
 
+.auth {
+  text-align: center;
+
+  h3 {
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 2.5em;
+  }
+
+  input {
+    background-color: $background;
+    border: 0;
+    border-bottom: 2px dotted $text;
+    font-size: 1.5em;
+    margin: 2rem auto;
+    text-align: center;
+    width: 20rem;
+  }
+}
+
 .btn-block {
   font-size: 1.25em;
   height: 2.5em;
