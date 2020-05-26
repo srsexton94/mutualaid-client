@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Card from 'react-bootstrap/Card'
 import axios from 'axios'
 
 // allows for pop up messages upon action success or failure
@@ -36,7 +37,14 @@ const Posts = function (props) {
   if (props.type === 'all') {
     postsJSX = posts.reverse().map(post => (
       <li key={post._id}>
-        <p><Link to={`/posts/${post._id}`}>{post.title}</Link> ({post.zip})</p>
+        <Link to={`/posts/${post._id}`}>
+          <Card className="post-card">
+            <Card.Body>
+              <Card.Title>{post.title}</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">({post.zip})</Card.Subtitle>
+            </Card.Body>
+          </Card>
+        </Link>
       </li>
     ))
   } else if (props.type) {
@@ -44,7 +52,14 @@ const Posts = function (props) {
       if (post.type === props.type) {
         return (
           <li key={post._id}>
-            <p><Link to={`/posts/${post._id}`}>{post.title}</Link> ({post.zip})</p>
+            <Link to={`/posts/${post._id}`}>
+              <Card className="post-card">
+                <Card.Body>
+                  <Card.Title>{post.title}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">({post.zip})</Card.Subtitle>
+                </Card.Body>
+              </Card>
+            </Link>
           </li>
         )
       }
