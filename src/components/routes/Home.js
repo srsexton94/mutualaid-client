@@ -37,8 +37,11 @@ const Home = () => (
     <p>And of course, do you have something you need help with?  Or something
     you could offer? Nothing is too small - go ahead, post it!
     </p>
-    <NavLink to='/posts'>
+    <NavLink className="home-btns" to='/posts'>
       <button className="btn btn-info">View Posts</button>
+    </NavLink>
+    <NavLink className="home-btns" to='/sign-in'>
+      <button className="btn btn-secondary">Sign In</button>
     </NavLink>
   </section>
 )
