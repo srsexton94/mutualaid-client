@@ -46,6 +46,18 @@ const Post = (props) => {
       })
   }
 
+  const zipFinder = zip => {
+    const regex = /[a-zA-Z]/
+    if (zip === '0') {
+      return 'Remote/All Locations'
+    } else if (regex.test(zip)) {
+      return zip + ' - United Kingdom'
+    } else {
+      if (zip.length === 4) zip = `0${zip}`
+      return zip + ' - United States'
+    }
+  }
+
   // if there is no post, display loading message to user
   if (!post) {
     return <p>Loading...</p>
@@ -79,7 +91,7 @@ const Post = (props) => {
     <section className="show-view">
       <h4>{post.title}</h4>
       <p>{post.text}</p>
-      <p>Located in: {post.zip}</p>
+      <p>Located in: {zipFinder(post.zip)}</p>
       <div className="show-buttons">
         { post.sourceUrl ? <a rel="noreferrer noopener" target="_blank" href={post.sourceUrl}><button className="btn btn-info btn-sm">More Info</button></a> : ''}
         {authJSX}
