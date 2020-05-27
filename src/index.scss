@@ -2,11 +2,16 @@
 
 $background: #d1d5de;
 $banner: #b7b6c2;
+$font: Impact, Charcoal, sans-serif;
 $form: #fff;
-$text: #1c0f13;
-$links: #111;
 $header: rgba(255, 255, 255, .5);
+$links: #111;
+$misc: #3e517a;
+$need: #46b1c9;
+$network: #e08e45;
+$offer: #b3d89c;
 $shadow: rgba(60, 65, 75, .5);
+$text: #1c0f13;
 
 body {
   background-color: $background;
@@ -16,9 +21,36 @@ body {
     color: $text;
   }
 
-  h4 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     color: $text;
-    font-family: Impact, Charcoal, sans-serif;
+    font-family: $font;
+  }
+}
+
+.auth {
+  text-align: center;
+
+  h3 {
+    font-size: 2.5em;
+  }
+
+  input {
+    background-color: $background;
+    border: 0;
+    border-bottom: 2px dotted $text;
+    font-size: 1.5em;
+    margin: 2rem auto;
+    text-align: center;
+    width: 20rem;
+
+    :focus,
+    :active {
+      background-color: $background;
+    }
   }
 }
 
@@ -51,8 +83,14 @@ body {
 
 .header-text {
   color: $text !important;
-  font-family: Impact, Charcoal, sans-serif;
-  font-size: 5vw;
+  font-family: $font;
+  font-size: 2.5rem;
+}
+
+@media only screen and (min-width: 1000px) {
+  .header-text {
+    font-size: 4rem;
+  }
 }
 
 .home {
@@ -60,6 +98,10 @@ body {
 
   button {
     margin: 0 auto 15px;
+  }
+
+  .home-btns {
+    margin: 5px;
   }
 }
 
@@ -74,17 +116,84 @@ body {
   border-bottom-right-radius: 1em;
   border-top-right-radius: 1em;
   box-shadow: 0 3px 5px $shadow;
-  min-height: 60vh;
+  height: 80vh;
+  margin-bottom: 3rem;
+  overflow-y: scroll;
 
   h4 {
+    font-size: 2em;
     padding: 2vh;
+    text-align: center;
   }
 
   ul {
-    columns: 3;
-    list-style: square outside none;
-    padding: 0 auto;
+    list-style: none;
     margin: 0;
+    padding: 0 1rem;
+
+    .post-card {
+      border-radius: 15px;
+      box-shadow: -1px 1px 1px 2px #efefef;
+      margin-bottom: 1rem;
+      min-width: 250px;
+      padding: 0;
+    }
+
+    .bookmark {
+      border-bottom: 10px solid transparent;
+      border-left: 15px solid $misc;
+      border-radius: 2px;
+      border-right: 15px solid $misc;
+      color: $form;
+      font-weight: bold;
+      height: 2.75rem;
+      margin-left: 1rem;
+      padding: 0;
+      padding-top: .5rem;
+      width: 1rem;
+    }
+
+    .bm-need {
+      border-left: 15px solid $need;
+      border-right: 15px solid $need;
+    }
+
+    .bm-offer {
+      border-left: 15px solid $offer;
+      border-right: 15px solid $offer;
+    }
+
+    .bm-network {
+      border-left: 15px solid $network;
+      border-right: 15px solid $network;
+    }
+
+    .bm-action {
+      border-left: 15px solid #982649;
+      border-right: 15px solid #982649;
+    }
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .posts ul {
+    column-count: 2;
+    column-width: 10px;
+    text-align: justify;
+
+    li {
+      break-inside: avoid;
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .posts ul {
+    column-count: 3;
+
+    li {
+      break-inside: avoid;
+    }
   }
 }
 
@@ -103,17 +212,43 @@ body {
   background-color: $form;
   border-radius: 1em;
   box-shadow: 0 3px 5px $shadow;
-  margin: 15vh auto;
+  margin: 5rem auto;
+  padding-top: 3rem;
   text-align: center;
+
+  h2 {
+    font-size: 3em;
+  }
 }
 
 .post-form {
-  > fieldset {
-    padding: 1vw;
+  text-align: center;
+
+  button {
+    margin: 2rem 1rem;
+  }
+
+  div {
+    margin: auto;
+    max-width: 50vw;
+  }
+
+  input {
+    border-radius: 10px;
+  }
+
+  .main-group {
+    margin-top: 2rem;
+  }
+
+  .main-label {
+    font-family: $font;
+    font-size: 1.25em;
   }
 
   .radios {
-    fieldset {
+
+    .radio {
       display: inline-block;
       padding: 0 1vw;
     }

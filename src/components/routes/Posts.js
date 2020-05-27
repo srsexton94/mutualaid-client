@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Card from 'react-bootstrap/Card'
 import axios from 'axios'
 
 // allows for pop up messages upon action success or failure
@@ -28,6 +29,19 @@ const Posts = function (props) {
       })
   }, [])
 
+  // A function to return appropriate text explanation re: zip/postal codes
+  const zipFinder = zip => {
+    const regex = /[a-zA-Z]/
+    if (zip === '0') {
+      return 'Remote/All Locations'
+    } else if (regex.test(zip)) {
+      return zip + ' - United Kingdom'
+    } else {
+      if (zip.length === 4) zip = `0${zip}`
+      return zip + ' - United States'
+    }
+  }
+
   // writes JSX to display only posts matching the sort (ie post tabs)
   // does so by passing prop `type` in routes (in `App`)
   let postsJSX
@@ -36,7 +50,17 @@ const Posts = function (props) {
   if (props.type === 'all') {
     postsJSX = posts.reverse().map(post => (
       <li key={post._id}>
-        <p><Link to={`/posts/${post._id}`}>{post.title}</Link> ({post.zip})</p>
+        <Card className="post-card">
+          <Link to={`/${post.type}s`}>
+            <div className={'bookmark bm-' + post.type}>{post.type.charAt(0).toUpperCase()}</div>
+          </Link>
+          <Link to={`/posts/${post._id}`}>
+            <Card.Body>
+              <Card.Title>{post.title}</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">{zipFinder(post.zip)}</Card.Subtitle>
+            </Card.Body>
+          </Link>
+        </Card>
       </li>
     ))
   } else if (props.type) {
@@ -44,7 +68,14 @@ const Posts = function (props) {
       if (post.type === props.type) {
         return (
           <li key={post._id}>
-            <p><Link to={`/posts/${post._id}`}>{post.title}</Link> ({post.zip})</p>
+            <Card className="post-card">
+              <Link to={`/posts/${post._id}`}>
+                <Card.Body>
+                  <Card.Title>{post.title}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">{zipFinder(post.zip)}</Card.Subtitle>
+                </Card.Body>
+              </Link>
+            </Card>
           </li>
         )
       }
