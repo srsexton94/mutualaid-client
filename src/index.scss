@@ -2,6 +2,7 @@
 
 $background: #d1d5de;
 $banner: #b7b6c2;
+$font: Impact, Charcoal, sans-serif;
 $form: #fff;
 $header: rgba(255, 255, 255, .5);
 $links: #111;
@@ -20,9 +21,13 @@ body {
     color: $text;
   }
 
-  h4 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     color: $text;
-    font-family: Impact, Charcoal, sans-serif;
+    font-family: $font;
   }
 }
 
@@ -30,7 +35,6 @@ body {
   text-align: center;
 
   h3 {
-    font-family: Impact, Charcoal, sans-serif;
     font-size: 2.5em;
   }
 
@@ -42,6 +46,11 @@ body {
     margin: 2rem auto;
     text-align: center;
     width: 20rem;
+
+    :focus,
+    :active {
+      background-color: $background;
+    }
   }
 }
 
@@ -74,7 +83,7 @@ body {
 
 .header-text {
   color: $text !important;
-  font-family: Impact, Charcoal, sans-serif;
+  font-family: $font;
   font-size: 2.5rem;
 }
 
@@ -203,17 +212,43 @@ body {
   background-color: $form;
   border-radius: 1em;
   box-shadow: 0 3px 5px $shadow;
-  margin: 15vh auto;
+  margin: 5rem auto;
+  padding-top: 3rem;
   text-align: center;
+
+  h2 {
+    font-size: 3em;
+  }
 }
 
 .post-form {
-  > fieldset {
-    padding: 1vw;
+  text-align: center;
+
+  button {
+    margin: 2rem 1rem;
+  }
+
+  div {
+    margin: auto;
+    max-width: 50vw;
+  }
+
+  input {
+    border-radius: 10px;
+  }
+
+  .main-group {
+    margin-top: 2rem;
+  }
+
+  .main-label {
+    font-family: $font;
+    font-size: 1.25em;
   }
 
   .radios {
-    fieldset {
+
+    .radio {
       display: inline-block;
       padding: 0 1vw;
     }
